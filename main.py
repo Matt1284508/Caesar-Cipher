@@ -12,9 +12,20 @@ def encrypt(text, shift):
         new_letter = alphabet[letter_index]
         cipher += new_letter
     print(f"The encoded text is {cipher}")   
+    
+def decrypt(text, shift):
+    plain_text = ""
+    for letter in text: 
+        letter_index = int(alphabet.index(letter) - shift)   
+        new_letter = alphabet[letter_index]
+        plain_text += new_letter
+    print(f"The decoded text is {plain_text}") 
 
   
 if direction == "encode":
     encrypt(text, shift)
+elif direction == "decode":
+    decrypt(text, shift)
+
 
     
